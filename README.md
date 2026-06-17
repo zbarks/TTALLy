@@ -28,18 +28,48 @@ Run locally first if you want: `npm run dev`.
 ## Use it
 
 - Producer: open the URL on a laptop → **I'm the producer**.
-- Cameras: open the same URL on each phone/tablet → **I'm a camera**.
-  Each device auto-grabs the next free number (Camera 1, 2, 3...).
-- Commentators: open the URL on the booth/pitch iPad → **I'm a commentator**,
-  then pick **booth** or **pitch**.
-  - *Booth*: the screen becomes a cue light. The producer flashes **Replay
-    incoming**, **Wrap up**, or **Back to you** — each a different colour and
-    flash. The booth screen also shows which camera angle is on air / next.
-    No comms needed.
-  - *Pitch*: tap **We're ready** when you're set (the producer gets pinged,
-    just like a camera). The producer cues you with **Coming to you**,
-    **You're on**, then **Wrap up** to hand back to the booth.
+- Cameras / commentary: open the URL on each device → **I'm a camera**, then
+  pick what the screen is:
+  - **Camera operator** — full-screen tally light. Buttons: *I'm ready*,
+    *Good shot*, *Message* (free text to the producer).
+  - **Booth commentary** — the screen shows your live status automatically
+    (it goes green the instant your vMix input is cut to air). The producer
+    drops messages on top: *Replay incoming*, *Wrap*, *Transfer to ground*,
+    *Stand by*. No buttons to press — set which vMix input is pointed at you
+    once, and it follows.
+  - **Pitch commentary** — same auto live status, plus a big **WE'RE READY**
+    button and a *Message* button. The producer cues you with *Coming to you*
+    and *Wrap up*. When your input drops off air it returns to stand by on its
+    own.
 - Everyone must be on the same **room** (default `MAIN`).
+
+The producer suite **does not control vMix** — vMix drives the real tally.
+The producer can click extra cameras into live/preview as their own flags
+(shown with a dot), send messages, and cue commentators, all layered on top
+of whatever vMix is doing. Everyone sees the union.
+
+### Sticky sessions & end-of-day reset
+
+Each device remembers what it was in that room. If Camera 1 (Xander) closes
+the tab or his phone sleeps, reopening the URL shows a **Resume as Camera 1**
+button — and even if he goes the long way round (I'm a camera → Camera
+operator), he reclaims **1**, not the next free number. Same for commentary
+screens (slot + vMix input are remembered).
+
+At the end of the day the producer hits **↻ Reset day** (top-right). That
+wipes every camera, name, message, flag and commentator setup for the room and
+bumps a hidden "epoch", which invalidates everyone's saved session at once —
+connected devices re-join with fresh numbers automatically. Sticky sessions
+are per-browser, so a device only resumes on the same phone/laptop it was set
+up on.
+
+### Shortcuts (Stream Deck)
+
+Single keys, listed under **Keyboard / Stream Deck shortcuts** in the producer.
+`1–9` cut a camera live, `Shift+1–9` arm preview, `Space` takes, `0`/`Esc`
+clears your live flags. Letters `Z X C V B` drive the first booth commentator
+(replay / wrap / transfer / stand by / clear) and `N M ,` drive the first pitch
+commentator (coming to you / wrap / clear).
 
 Tap a number on the Live pad and that camera flashes green. Arm one on
 Preview (orange), then **Take** (or spacebar) to cut it live.
