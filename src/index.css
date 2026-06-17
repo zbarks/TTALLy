@@ -10,4 +10,42 @@ body,
 body {
   background: #0a0b0d;
   -webkit-font-smoothing: antialiased;
+  transition: background 0.2s;
+}
+
+/* Producer screen-flash when a camera pings */
+@keyframes tallyFlash {
+  0% { opacity: 0; }
+  12% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes tallyStrobe {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+  100% { opacity: 0; }
+}
+/* Camera "ping producer" button flash */
+@keyframes tallyBtnFlash {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+
+/* Commentator iPad cue flashes — distinct hard vs soft attention pulses */
+@keyframes commFlashHard {
+  0% { opacity: 0; }
+  8% { opacity: 1; }
+  24% { opacity: 0.15; }
+  40% { opacity: 1; }
+  62% { opacity: 0.1; }
+  100% { opacity: 0; }
+}
+@keyframes commFlashSoft {
+  0% { opacity: 0; }
+  16% { opacity: 0.92; }
+  55% { opacity: 0.32; }
+  100% { opacity: 0; }
+}
+@keyframes commWrapPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }

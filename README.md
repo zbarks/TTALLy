@@ -30,6 +30,15 @@ Run locally first if you want: `npm run dev`.
 - Producer: open the URL on a laptop → **I'm the producer**.
 - Cameras: open the same URL on each phone/tablet → **I'm a camera**.
   Each device auto-grabs the next free number (Camera 1, 2, 3...).
+- Commentators: open the URL on the booth/pitch iPad → **I'm a commentator**,
+  then pick **booth** or **pitch**.
+  - *Booth*: the screen becomes a cue light. The producer flashes **Replay
+    incoming**, **Wrap up**, or **Back to you** — each a different colour and
+    flash. The booth screen also shows which camera angle is on air / next.
+    No comms needed.
+  - *Pitch*: tap **We're ready** when you're set (the producer gets pinged,
+    just like a camera). The producer cues you with **Coming to you**,
+    **You're on**, then **Wrap up** to hand back to the booth.
 - Everyone must be on the same **room** (default `MAIN`).
 
 Tap a number on the Live pad and that camera flashes green. Arm one on
